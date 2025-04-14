@@ -12,7 +12,7 @@ function ForgotPasswordPage() {
         setError('');
 
         try {
-            const response = await axios.post('https://password-reset-flow-server-side.onrender.com/forgot-password', {
+            const response = await axios.post(`${process.env.SERVER_URL}/forgot-password`, {
                 email,
             });
             setMessage(response.data.message);

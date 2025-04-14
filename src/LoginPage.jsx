@@ -16,7 +16,7 @@ function LoginPage() {
     setMessage('');
 
     try {
-      const response = await axios.post('https://password-reset-flow-server-side.onrender.com/login', {
+      const response = await axios.post(`${process.env.SERVER_URL}/login`, {
         email,
         password,
       });

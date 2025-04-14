@@ -16,7 +16,7 @@ const ResetPasswordPage = () => {
     useEffect(() => {
         if (token) {
             axios
-                .get(`https://password-reset-flow-server-side.onrender.com/reset-password/verify?token=${token}`)
+                .get(`${process.env.SERVER_URL}/reset-password/verify?token=${token}`)
                 .then((response) => {
                     setUsername(response.data.username);
                 })
@@ -39,7 +39,7 @@ const ResetPasswordPage = () => {
         }
 
         try {
-            await axios.post("https://password-reset-flow-server-side.onrender.com/reset-password", {
+            await axios.post(`${process.env.SERVER_URL}/reset-password`, {
                 token,
                 newPassword,
             });

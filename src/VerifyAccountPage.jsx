@@ -11,7 +11,7 @@ function VerifyAccountPage() {
   useEffect(() => {
     const verify = async () => {
       try {
-        const res = await axios.get(`https://password-reset-flow-server-side.onrender.com/verify-account/${token}`);
+        const res = await axios.get(`${process.env.SERVER_URL}/verify-account/${token}`);
         setMessage(res.data.message || "Account verified successfully. You can now login.");
         setSuccess(true);
       } catch (err) {

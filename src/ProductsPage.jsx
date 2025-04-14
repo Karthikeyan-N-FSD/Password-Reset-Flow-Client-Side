@@ -7,7 +7,7 @@ function ProductsPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://password-reset-flow-server-side.onrender.com/products')
+        axios.get(`${process.env.SERVER_URL}/products`)
             .then((res) => setProducts(res.data))
             .catch((err) => {
                 console.error("Unauthorized or Error:", err);
