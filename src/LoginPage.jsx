@@ -16,7 +16,7 @@ function LoginPage() {
     setMessage('');
 
     try {
-      const response = await axios.post(`${process.env.SERVER_URL}/login`, {
+      const response = await axios.post(`https://kaz-password-reset.onrender.com/login`, {
         email,
         password,
       });

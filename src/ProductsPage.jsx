@@ -7,7 +7,7 @@ function ProductsPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`${process.env.SERVER_URL}/products`)
+        axios.get(`https://kaz-password-reset.onrender.com/products`)
             .then((res) => setProducts(res.data))
             .catch((err) => {
                 console.error("Unauthorized or Error:", err);

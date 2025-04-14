@@ -33,7 +33,7 @@ function RegisterPage() {
 
         try {
             // Call the back-end API
-            const response = await axios.post(`${process.env.SERVER_URL}/register`, {
+            const response = await axios.post(`https://kaz-password-reset.onrender.com/register`, {
                 name,
                 email,
                 password,
